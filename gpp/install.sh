@@ -9,7 +9,7 @@ set -e
 
 # ════════════════════════════════════════════════════════════════════
 #  ▼▼▼  CHANGE THIS ONE LINE to your GitHub repo raw base URL  ▼▼▼
-GITHUB_RAW=""
+GITHUB_RAW="https://raw.githubusercontent.com/gabrieltodua/test/main/gpp"
 #  ▲▲▲  Example: "https://raw.githubusercontent.com/john/gpp/main"  ▲▲▲
 # ════════════════════════════════════════════════════════════════════
 
