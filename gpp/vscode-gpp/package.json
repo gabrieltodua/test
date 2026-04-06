@@ -1,0 +1,86 @@
+{
+  "name": "gpp-language",
+  "displayName": "G++ Language",
+  "description": "Syntax highlighting, autocomplete, hover docs, error checking, and ▶ run button for G++ (.G++ files)",
+  "version": "3.0.0",
+  "publisher": "gpp-team",
+  "engines": { "vscode": "^1.79.0" },
+  "main": "./extension.js",
+  "activationEvents": ["onLanguage:gpp"],
+  "categories": ["Programming Languages", "Snippets"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "gpp",
+        "aliases": ["G++", "gpp", "G Plus Plus"],
+        "extensions": [".G++", ".g++"],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/gpp_icon.png",
+          "dark":  "./icons/gpp_icon.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "gpp",
+        "scopeName": "source.gpp",
+        "path": "./syntaxes/gpp.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "gpp",
+        "path": "./snippets/gpp.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "gpp.runFile",
+        "title": "Run G++ File",
+        "icon": "$(play)",
+        "category": "G++"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "gpp.runFile",
+          "when": "editorLangId == gpp",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "gpp.runFile",
+          "when": "editorLangId == gpp",
+          "group": "1_run"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "gpp.runFile",
+          "when": "resourceExtname == .G++ || resourceExtname == .g++",
+          "group": "1_run"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "gpp.runFile",
+        "key": "f5",
+        "when": "editorLangId == gpp"
+      },
+      {
+        "command": "gpp.runFile",
+        "key": "ctrl+shift+r",
+        "when": "editorLangId == gpp"
+      },
+      {
+        "command": "gpp.runFile",
+        "key": "cmd+shift+r",
+        "when": "editorLangId == gpp && isMac"
+      }
+    ]
+  }
+}
